@@ -1,0 +1,41 @@
+﻿<Window x:Class="armonte_aplicacao.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:armonte_aplicacao.ViewModels"
+        Title="Relação de Custos" Height="550" Width="700">
+
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Obras" FontSize="20" FontWeight="Bold" Margin="0,0,0,15"/>
+
+        <DataGrid ItemsSource="{Binding Projetos}"
+                  Grid.Row="1"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="50"/>
+                <DataGridTextColumn Header="Designação" Binding="{Binding Designacao}" Width="250"/>
+                <DataGridTextColumn Header="Ano Regularização" Binding="{Binding AnoRegularizacao}" Width="150"/>
+                <DataGridTextColumn Header="Início Obra" Binding="{Binding InicioObra, StringFormat=dd/MM/yyyy}" Width="120"/>
+                <DataGridTemplateColumn Header="" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Entrar"
+                                    Command="{Binding DataContext.AbrirProjetoCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                    CommandParameter="{Binding}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

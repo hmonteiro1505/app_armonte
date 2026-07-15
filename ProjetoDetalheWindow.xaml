@@ -1,0 +1,6 @@
+﻿<Window x:Class="armonte_aplicacao.ProjetoDetalheWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Detalhe do Projeto" Height="600" Width="950">
+    <Grid x:Name="ConteudoGrid"/>
+</Window>

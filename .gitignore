@@ -1,0 +1,46 @@
+## Visual Studio / .NET
+
+# Pastas de build
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
+# Ficheiros e pasta de configuração do Visual Studio (índices, caches, Copilot, etc.)
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Base de dados local
+*.db
+*.db-shm
+*.db-wal
+*.mdf
+*.ldf
+
+# NuGet
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Ficheiros de publish/deploy
+publish/
+*.pubxml
+*.publishproj
+
+# Resultados de testes
+TestResults/
+[Tt]est[Rr]esult*/
+
+# ReSharper/Rider
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Ficheiros do sistema operativo
+Thumbs.db
+.DS_Store
